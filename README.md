@@ -1,7 +1,7 @@
 # santiment-network-node
 
 ```console
-# güncelleme ve docker kurulumu
+# update and docker installation
 sudo apt update -y && sudo apt upgrade -y
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
@@ -23,7 +23,7 @@ sudo docker run hello-world
 ```
 
 ```console
-# gerekli yapılandırmalar:
+# necessary configurations:
 sudo mkdir -p /opt/sanchain/readonly
 cd /opt/sanchain/readonly
 
@@ -31,6 +31,6 @@ sudo git clone https://github.com/santiment/sanr-pos-network.git .
 sudo mv env.example .env
 sudo nano .env
 
-# EXTERNAL_IP=Sunucunun IP adresini giriniz - CTRL X Y ENTER ile çıkınız.
+# EXTERNAL_IP=Enter the IP address of the server - exit with CTRL X Y ENTER.
 sudo ln -s docker-compose-readonly.yml docker-compose.yml
 sudo docker compose up -d
